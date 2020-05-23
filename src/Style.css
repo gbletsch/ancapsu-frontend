@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 14px Roboto, sans-serif;
+  background: #f0f0f5;
+  -webkit-font-smoothing: antialiazed;
+}
+
+input, button, textarea {
+  font: 400 18px Roboto, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  background: #fc0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 30px;
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  filter: brightness(80%);
+}
+
+.toolbar {
+  height: 100px;
+  width: 100vw;
+  padding: 5px;
+
+  background-color: #ffcc00;
+  background-image: url('assets/small-header-chess-pattern.png');
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: 150px 160px;
+}
+
+.toolbar__first-row ul {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+  list-style: none;
+}
+
+.toolbar__first-row li {
+  margin-right: 10px;
+}
+
+.toolbar__second-row img {
+  margin-left: 15px;
+  height: 30px;
+}
+
+.toolbar__third-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+
+.toolbar__third-row ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.toolbar__third-row li {
+  margin-right: 5px;
+}
+
+.toolbar__right .button {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 767px) {
+  .toolbar__second-row img {
+    height: 60px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .toolbar__second-row img {
+    height: 80px;
+  }
+}
