@@ -58,15 +58,21 @@ button {
   background-size: 150px 160px;
 }
 
-.toolbar__first-row ul {
+.toolbar__icons {
   display: flex;
   flex-direction: row;
+
   margin-left: 15px;
   list-style: none;
 }
 
-.toolbar__first-row li {
+.toolbar__icons li {
   margin-right: 10px;
+}
+
+.toolbar__second-row {
+  display: flex;
+  flex-direction: column;
 }
 
 .toolbar__second-row img {
@@ -74,21 +80,39 @@ button {
   height: 30px;
 }
 
-.toolbar__third-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 15px;
-}
-
-.toolbar__third-row ul {
+.toolbar__second-row ul {
   display: flex;
   flex-direction: row;
   list-style: none;
 }
 
-.toolbar__third-row li {
+.toolbar__second-row li {
   margin-right: 5px;
+}
+
+.toolbar__menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.menu-icon {
+  height: 22px;
+  width: 20px;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  background: #ffcc00;
+}
+
+.toolbar__third-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15px;
 }
 
 .toolbar__right .button {
@@ -99,12 +123,37 @@ button {
 }
 
 @media only screen and (min-width: 767px) {
+  .toolbar {
+    height: 110px;
+    background-image: url('assets/medium-header-chess-pattern.png');
+    background-size: 150px 160px;
+  }
+  .toolbar__icons {
+    justify-content: center;
+  }
+  .toolbar__second-row {
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .toolbar__second-row img {
     height: 60px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+  .toolbar {
+    height: 160px;
+    background-image: url('assets/big-header-chess-pattern.png');
+    background-size: 200px 160px;
+  }
+  .toolbar__icons {
+    justify-content: center;
+  }
+  .toolbar__second-row {
+    width: 35%;
+    flex-direction: row;
+  }
   .toolbar__second-row img {
     height: 80px;
   }
