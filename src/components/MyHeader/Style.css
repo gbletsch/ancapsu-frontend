@@ -1,0 +1,16 @@
+header {
+  height: 50px;
+  background: rgb(255,204,0);
+  background: linear-gradient(132deg, rgba(255,204,0,1) 52%, rgba(0,0,0,1) 100%);
+}
+
+.navbar {
+  height: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;  
+}

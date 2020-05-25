@@ -1,0 +1,30 @@
+import React from 'react'
+
+import YoutubeLogo from '../assets/youtube-logo.png'
+import BitchuteLogo from '../assets/bitchute-logo.png'
+import FacebookLogo from '../assets/facebook-logo.png'
+import MindsLogo from '../assets/minds-logo.png'
+import TwitterLogo from '../assets/twitter-logo.png'
+import GabLogo from '../assets/gab-logo.png'
+import AncapsuLogo from '../assets/logo-ancapsu.png'
+import { FaHome, FaBars } from 'react-icons/fa'
+
+function Header() {
+  return (
+    <header>
+      <nav>
+        <a href="#" class="menu-trigger">
+          <FaBars className='hamburger' size='20px' />
+        </a>
+        <ul>
+          <li><a href="#">videos</a></li>
+          <li><a href="#">materias</a></li>
+          <li><a href="#">pautas</a></li>
+          <li><a href="#">minha conta</a></li>
+        </ul>
+      </nav>    
+    </header>
+  )
+}
+
+export default Header
