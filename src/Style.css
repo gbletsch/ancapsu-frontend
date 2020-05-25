@@ -105,7 +105,14 @@ button {
   list-style: none;
 }
 
-
+@media screen and (min-width: 600px) {
+  .header__second-row .header__hamburger {
+    display: none;
+  }
+  .header__third-row {
+    display: flex;
+  }
+}
 
 .button {
   width: 100px;

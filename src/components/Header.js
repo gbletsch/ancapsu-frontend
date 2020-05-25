@@ -7,19 +7,18 @@ import MindsLogo from '../assets/minds-logo.png'
 import TwitterLogo from '../assets/twitter-logo.png'
 import GabLogo from '../assets/gab-logo.png'
 import AncapsuLogo from '../assets/logo-ancapsu.png'
-import { FaHome } from 'react-icons/fa'
-import { FiMenu } from 'react-icons/fi'
+import { FaHome, FaBars } from 'react-icons/fa'
 
 function Header() {
   return (
     <header className='header-container'>
       <div className="header__first-row">
-        <img src={YoutubeLogo} alt=""/>
-        <img src={BitchuteLogo} alt=""/>
-        <img src={FacebookLogo} alt=""/>
-        <img src={MindsLogo} alt=""/>
-        <img src={TwitterLogo} alt=""/>
-        <img src={GabLogo} alt=""/>
+        <a href='/'><img src={YoutubeLogo} alt=""/></a>
+        <a href='/'><img src={BitchuteLogo} alt=""/></a>
+        <a href='/'><img src={FacebookLogo} alt=""/></a>
+        <a href='/'><img src={MindsLogo} alt=""/></a>
+        <a href='/'><img src={TwitterLogo} alt=""/></a>
+        <a href='/'><img src={GabLogo} alt=""/></a>
       </div>
       <div className="header__second-row">
         <img src={AncapsuLogo} alt="AncapSu" />
@@ -28,7 +27,7 @@ function Header() {
           <a className='button' href="/create-account">Criar conta</a>
         </section>
         <a href="/" className='button header__hamburger'>
-          <FiMenu className='fi' size='20px' />
+          <FaBars size='15px' />
         </a>
       </div>
       <ul className='header__third-row'>
