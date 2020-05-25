@@ -35,7 +35,10 @@ function MyHeader() {
         className="mobile-menu-body"
         id='mobile-menu'
       >
-        Mobile
+        <a href="/">videos</a>
+        <a href="/">materias</a>
+        <a href="/">pautas</a>
+        <a href="/">minha conta</a>
       </div>
     </header>
   );

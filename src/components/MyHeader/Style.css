@@ -12,7 +12,7 @@
   height: 5vw;
 }
 
-header a:not(:first-child) {
+.navbar a:not(:first-child) {
   display: none;
 }
 
@@ -28,7 +28,7 @@ header a:not(:first-child) {
 .mobile-menu-body {
   display: none;
   position: absolute;
-  background-color: #000;
+  background-color: white; /*#000;*/
   color: #fc0;
   top: 55px;
   width: 200px;
@@ -37,9 +37,13 @@ header a:not(:first-child) {
   z-index: 10;
   right: 0;
 }
+/* .mobile-menu-body a,
+.mobile-menu-body.active a {
+  color: white;
+} */
 
 .mobile-menu-body.active {
-  display: block;
+  display: flex;
 }
 
 
