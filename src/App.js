@@ -7,12 +7,12 @@ function App() {
   return (
     <div className="container">
       <MyHeader />
-      <menu>
+      {/* <menu>
         <a href="/" className="button">videos</a>
         <a href="/" className="button">materias</a>
         <a href="/" className="button">pautas</a>
         <a href="/" className="button">minha conta</a>
-      </menu>
+      </menu> */}
       <main>
         <section className="cards">
           <div className="card">

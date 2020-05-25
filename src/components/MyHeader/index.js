@@ -5,18 +5,21 @@ import './Style.css'
 
 function MyHeader() {
   function handleClick (e) {
-    var x = document.getElementById('myNav')
-    if (x.className === 'navbar') {
-      x.className += ' responsive'
+    var x = document.getElementById('mobile-menu')   
+    
+    if (x.className === 'mobile-menu-body') {
+      x.className += ' active'
     } else {
-      x.className = 'navbar'
+      x.className = 'mobile-menu-body'
     }
+    console.log(x.className);
+
   }
+
   return (
-  <header>
-    <nav className="navbar" id='myNav'>
-      <a href="/" className="active">
-        <AncapsuLogo />
+    <header className='navbar' id='myNav'>
+      <a href="/">
+        <img className='logo' src={AncapsuLogo} alt="Ancap.su"/>
       </a>
       <a href="/">videos</a>
       <a href="/">materias</a>
@@ -26,10 +29,15 @@ function MyHeader() {
         className='hamburger'
         onClick={e => handleClick(e)}
       >
-        <FaBars size='20px' />
+        <FaBars size='20px' color='#fc0' />
       </button>
-    </nav>
-  </header>
+      <div
+        className="mobile-menu-body"
+        id='mobile-menu'
+      >
+        Mobile
+      </div>
+    </header>
   );
 }
 
