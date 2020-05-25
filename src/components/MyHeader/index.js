@@ -5,42 +5,32 @@ import './Style.css'
 
 function MyHeader() {
   function handleClick (e) {
-    var x = document.getElementById('mobile-menu')   
+    var x = document.getElementById('myTopnav')   
     
-    if (x.className === 'mobile-menu-body') {
-      x.className += ' active'
+    if (x.className === 'topnav') {
+      x.className += ' responsive'
     } else {
-      x.className = 'mobile-menu-body'
+      x.className = 'topnav'
     }
     console.log(x.className);
 
   }
 
   return (
-    <header className='navbar' id='myNav'>
-      <a href="/">
-        <img className='logo' src={AncapsuLogo} alt="Ancap.su"/>
-      </a>
-      <a href="/">videos</a>
-      <a href="/">materias</a>
-      <a href="/">pautas</a>
-      <a href="/">minha conta</a>
-      <button
-        className='hamburger'
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a
+        href={void(0)}
+        class="icon"
         onClick={e => handleClick(e)}
       >
-        <FaBars size='20px' color='#fc0' />
-      </button>
-      <div
-        className="mobile-menu-body"
-        id='mobile-menu'
-      >
-        <a href="/">videos</a>
-        <a href="/">materias</a>
-        <a href="/">pautas</a>
-        <a href="/">minha conta</a>
-      </div>
-    </header>
+        <img src={FaBars} alt=""/>
+      </a>
+    </div>
+
   );
 }
 
