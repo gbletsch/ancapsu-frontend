@@ -18,16 +18,25 @@ function MyHeader() {
 
   return (
     <div class="topnav" id="myTopnav">
-      <a href="#home" class="active">Home</a>
+      <a
+        href="#home"
+        // class="active"
+      >
+        <img
+          className='logo'
+          src={AncapsuLogo}
+          alt="home"
+        />
+      </a>
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
       <a
         href={void(0)}
-        class="icon"
+        className="icon"
         onClick={e => handleClick(e)}
       >
-        <img src={FaBars} alt=""/>
+        <FaBars size='20px' color='#fc0' />
       </a>
     </div>
 
