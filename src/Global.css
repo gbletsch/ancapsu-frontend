@@ -28,7 +28,8 @@ input, button, textarea {
   font: 400 18px Roboto, sans-serif;
 }
 
-.button {
+
+/*.button {
   width: 100px;
   height: 30px;
   background: #fc0;
@@ -46,7 +47,7 @@ input, button, textarea {
 
 .button:hover {
   filter: brightness(80%);
-}
+} */
 
 /* header {
   background: rgb(255,204,0);
