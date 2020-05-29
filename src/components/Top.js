@@ -45,7 +45,8 @@ export default function Top() {
   return (
     <div>
       <Navbar
-        style={{ backgroundColor:'#fc0' }}
+        style={{
+          backgroundColor:'#fc0' }}
         // color="#ffcc00"
         light
         expand='md'

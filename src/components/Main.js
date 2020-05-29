@@ -1,16 +1,18 @@
 import React from 'react'
-import { Col, Row, Card, CardTitle, CardSubtitle,
-  Form, FormGroup, Input, Button
-} from 'reactstrap'
-import MainCard from './MainCard'
+
 import MainTop from './MainTop'
 import Videos from './Videos'
+import LastNews from './LastNews'
+import Help from './Help'
 
 export default function Main() {
   return (
     <main>
       <MainTop />
       <Videos />
+      <LastNews />
+      <Help />
+
     </main>
   )
 }

@@ -28,6 +28,14 @@ input, button, textarea {
   font: 400 18px Roboto, sans-serif;
 }
 
+CardTitle {
+  font-size: 4vh;
+}
+
+.no-margin {
+  margin: '0';
+  padding: '0';
+}
 
 /*.button {
   width: 100px;

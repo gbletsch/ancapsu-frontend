@@ -7,7 +7,7 @@ import './Global.css'
 
 function App() {
   return (
-    <Container >
+    <Container fluid>
       <Top />
       <Main />
     <Row>Footer</Row>
