@@ -9,9 +9,17 @@ import HelpCard from './HelpCard'
 
 export default function Help() {
   return (
-    <div style={{ marginTop: '20px', height: '200px' }}>
+    <div
+      style={{
+        marginTop: '20px',
+        // height: '200px'
+      }}
+    >
       <h4>quer ajudar?</h4>
-      <Row className='justify-content-center' style={{height: '100px'}}>
+      <Row
+        className='justify-content-center'
+        // style={{height: '100px'}}
+      >
           <HelpCard
             src={SuggestPhoto}
             title='Sugerir notícia'

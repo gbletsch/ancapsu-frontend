@@ -9,7 +9,9 @@ import {
 
 export default function HelpCard(props) {
   return (
-    <Card style={{ width: '110px' }}>
+    <Card
+      style={{ width: '110px' }}
+    >
       <CardImg
         width='100%'
         src={props.src}
