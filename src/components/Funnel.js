@@ -12,21 +12,21 @@ import {
 } from 'reactstrap'
 
 
-export default function Funnel() {
+export default function Funnel(props) {
   return (
     <div>
         <h4>funil de produção</h4>
         <Row>
           <Col>
             <Card body className='text-center'>
-              <CardTitle>120</CardTitle>
+              <CardTitle>{props.numTargets}</CardTitle>
               <CardSubtitle>Pautas</CardSubtitle>
             </Card>
           </Col>
           <Col>
             <Card body className='text-center'>
-              <CardTitle>120</CardTitle>
-              <CardSubtitle>Pautas</CardSubtitle>
+              <CardTitle>{props.numApproval}</CardTitle>
+              <CardSubtitle>Aprovação</CardSubtitle>
             </Card>
           </Col>
         </Row>

@@ -6,6 +6,8 @@ import {
   CardText,
   Row
 } from 'reactstrap'
+
+import SocialLinks from './SocialLinks'
 import LogoAncapsu from '../assets/logo-ancapsu-yellow.png'
 
 export default function MyFooter() {
@@ -61,6 +63,9 @@ export default function MyFooter() {
             ancapsu@gmail.com
           </CardLink>
         </Card>
+      </Row>
+      <Row>
+        <SocialLinks color='white' />
       </Row>
     </footer>
   )

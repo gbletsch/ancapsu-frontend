@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Col, Row } from 'reactstrap'
-import MainCard from './MainCard'
+import VideoCard from './VideoCard'
 import db from '../database/data.json'
 
 export default function Videos() {
@@ -26,7 +26,7 @@ export default function Videos() {
           data.map(item => {
             return (
               <Col id={item.id} sm='12' md='6' xl='3'>
-                <MainCard
+                <VideoCard
                   photo={item.photo}
                   linkTo='#'
                   title={item.title}

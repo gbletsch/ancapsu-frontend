@@ -37,6 +37,11 @@ CardTitle {
   padding: '0';
 }
 
+.badge-dark {
+  margin: 2px;
+  padding: 2px;
+}
+
 /*.button {
   width: 100px;
   height: 30px;

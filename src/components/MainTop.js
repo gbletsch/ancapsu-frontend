@@ -7,7 +7,7 @@ import {
 import Funnel from './Funnel'
 import NewsForm from './NewsForm'
 
-export default function MainTop() {
+export default function MainTop(props) {
   return (
     <Row>
       <Col
@@ -27,7 +27,10 @@ export default function MainTop() {
           borderBottom: '2px #000 solid'
         }}
       >
-        <Funnel />
+        <Funnel
+          numTargets={props.numTargets}
+          numApproval={props.numApproval}
+        />
       </Col>
     </Row>
   )
