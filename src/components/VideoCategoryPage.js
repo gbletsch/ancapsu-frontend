@@ -3,7 +3,9 @@ import React, {
 } from 'react'
 
 import {
+  Button,
   CardColumns,
+  CardLink
 } from 'reactstrap'
 
 import VideoCard from './VideoCard'
@@ -14,6 +16,7 @@ export default function VideoCategoryPage(props) {
   const cat = props.match.params.cat
   const nameCat = props.location.state.nameCat
   const pageSize = 10
+  
   const [offset, setoffset] = useState(0)
   const [dataset, setdataset] = useState([])
   const [totalVideos, settotalVideos] = useState(0)
@@ -25,6 +28,8 @@ export default function VideoCategoryPage(props) {
 
 
   useEffect(() => {
+    console.log(url);
+    
     api.get(url)
       .then(response => {
         settotalVideos(response.data.Total)
@@ -33,12 +38,15 @@ export default function VideoCategoryPage(props) {
         setloading(false)
       })
       .catch(error => console.log(error))
-  }, [url])
+  }, [loading, url])
 
-  // function handleClick(e, index) {
-  //   e.preventDefault()
-  //   setcurrentPage(index)
-  // }
+  function handleClick(e) {
+    // e.preventDefault()
+    setoffset(offset + pageSize)
+    seturl(`/video/bycategory/${cat}&ini=${offset + pageSize}&max=${pageSize}`)
+    setloading(true)
+    // setcurrentPage(index)
+  }
 
   if (loading) {
     return <h3>Loading...</h3>
@@ -64,7 +72,9 @@ export default function VideoCategoryPage(props) {
           })
         }
         {console.log(dataset)}
+        
       </CardColumns>
+      <Button onClick={e => handleClick(e)}>Mais videos</Button>
     </div>
 
   )

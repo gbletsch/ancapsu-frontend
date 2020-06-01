@@ -60,11 +60,12 @@ export default function VideoPage(props) {
                     state: {
                       nameCat: item.Category
                     }
-                  }}>
-                    <Badge className='badge-dark'>
-                      {item.Category}
-                    </Badge>
-                  </Link>
+                  }}
+                >
+                  <Badge className='badge-dark'>
+                    {item.Category}
+                  </Badge>
+                </Link>
               )
             })
           }
