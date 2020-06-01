@@ -15,13 +15,15 @@ body {
 
 a, .styled-a {
   text-decoration: none;
-  color: #000;
+  color: black;
   font-weight: 700;
   transition: opacity 0.2s;
 }
 
 a:hover:not(.button) {
-  opacity: .4;  
+  text-decoration: none;
+  color: #000;
+  opacity: .7;  
 }
 
 input, button, textarea {
@@ -30,6 +32,12 @@ input, button, textarea {
 
 CardTitle {
   font-size: 4vh;
+}
+
+.margin-border-main {
+  border-top: 2px black solid;
+  margin-top: 30px;
+  padding-top: 20px;
 }
 
 .no-margin {
@@ -44,6 +52,14 @@ CardTitle {
 
 .font-small {
   font-size: 0.8rem;
+}
+
+.video-thumb {
+  filter: opacity(80%);
+}
+
+.video-thumb:hover {
+  filter: opacity(100%);
 }
 
 /*.button {

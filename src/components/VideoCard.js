@@ -1,19 +1,15 @@
-import React, {
-  useState
-} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import {
   Card,
   CardImg,
+  CardImgOverlay,
+  CardTitle
 } from 'reactstrap'
  
 export default function VideoCard(props) {
   const {
-    // id,
-    // categories,
-    // reference,
-    // title,
     allData
   } = props
 
@@ -34,33 +30,40 @@ export default function VideoCard(props) {
   }
  
   return (
-    <Card className='mt-2' >
+    <Card className='mt-2 text-right' >
       <CardImg
         top
         width='100%'
         src={photo}
         alt='Card Image'
       />
-      <Link
-        className='styled-a'
-        to={{
-          pathname: `/video/${id}`,
-          state: {
-            categories: categories,
-            reference: ref,
-            photo: photo
-          }
-        }}
-        style={{
-          textAlign: 'center',
-          textDecoration: 'none',
-          color: '#000',
-          fontWeight: '500',
-          transition: 'opacity 0.2s'
-        }}
+      <CardImgOverlay
+        className='d-flex align-items-end'
       >
-        {title}
-      </Link>
+        <CardTitle
+          style={{
+            color: 'white'
+            
+          }}
+        >
+          <Link
+            className='styled-a'// text-center'
+            style={{
+              backgroundColor: 'lightgray'
+            }}
+            to={{
+              pathname: `/video/${id}`,
+              state: {
+                categories: categories,
+                reference: ref,
+                photo: photo
+              }
+            }}
+          >
+            {title}
+          </Link>
+        </CardTitle>
+      </CardImgOverlay>
     </Card>
   )
 }

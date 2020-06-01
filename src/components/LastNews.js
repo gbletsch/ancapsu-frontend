@@ -1,41 +1,33 @@
-import React, { useState, useEffect } from 'react'
-import { Col, Row } from 'reactstrap'
-import VideoCard from './VideoCard'
-import db from '../database/data.json'
+import React from 'react'
+import {
+  CardColumns,
+} from 'reactstrap'
 
-export default function Videos() {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
+import NewsCard from './NewsCard'
 
-  useEffect(() => {
-    const newData = db.map(item => item)
-    setData(newData)
-    setLoading(false)
-  }, [])
-  if (loading) {
-    return (
-      <h1>Loading...</h1>
-    )
-  } 
-  
+export default function Videos(props) {
+  const { data } = props
+
   return (
-    <div style={{marginTop: '20px'}} >
-      <h4>últimnotícias veiculadas</h4>
-      <Row>
+    <div
+      className='margin-border-main'
+    >
+      <h4>últimas notícias veiculadas</h4>
+      <CardColumns
+        style={{
+          marginTop: '20px'
+        }}
+      >
         {
-          data.map(item => {
-            return (
-              <Col id={item.id} sm='12' md='6' xl='3'>
-                <VideoCard
-                  photo={item.photo}
-                  linkTo='#'
-                  title={item.title}
-                />            
-              </Col>
-            )
+          data.map(firstItem => {
+            return firstItem.Articles.map(item => {
+              return (
+                <NewsCard data={item} />
+              )
+            })
           })
         }
-      </Row>
+      </CardColumns>
     </div>
   )
 }

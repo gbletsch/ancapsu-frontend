@@ -9,19 +9,26 @@ import {
 
 
 export default function Funnel(props) {
+  const {
+    numApproval,
+    numTargets
+  } = props
+
   return (
-    <div>
+    <div
+      className='margin-border-main'
+    >
         <h4>funil de produção</h4>
         <Row>
           <Col>
             <Card body className='text-center'>
-              <CardTitle>{props.numTargets}</CardTitle>
+              <CardTitle>{numTargets}</CardTitle>
               <CardSubtitle>Pautas</CardSubtitle>
             </Card>
           </Col>
           <Col>
             <Card body className='text-center'>
-              <CardTitle>{props.numApproval}</CardTitle>
+              <CardTitle>{numApproval}</CardTitle>
               <CardSubtitle>Aprovação</CardSubtitle>
             </Card>
           </Col>

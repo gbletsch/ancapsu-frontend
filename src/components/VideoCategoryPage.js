@@ -5,7 +5,6 @@ import React, {
 import {
   Button,
   CardColumns,
-  CardLink
 } from 'reactstrap'
 
 import VideoCard from './VideoCard'
@@ -22,8 +21,6 @@ export default function VideoCategoryPage(props) {
   const [totalVideos, settotalVideos] = useState(0)
 
   const [loading, setloading] = useState(true)
-  const [pagesCount, setpagesCount] = useState(0)
-  const [currentPage, setcurrentPage] = useState(0)
   const [url, seturl] = useState(`/video/bycategory/${cat}&ini=${offset}&max=${pageSize}`)
 
 
@@ -34,14 +31,13 @@ export default function VideoCategoryPage(props) {
       .then(response => {
         settotalVideos(response.data.Total)
         setdataset(response.data.Videos);
-        // setpagesCount(Math.ceil(dataset.length / pageSize))
         setloading(false)
       })
       .catch(error => console.log(error))
   }, [loading, url])
 
   function handleClick(e) {
-    // e.preventDefault()
+    e.preventDefault()
     setoffset(offset + pageSize)
     seturl(`/video/bycategory/${cat}&ini=${offset + pageSize}&max=${pageSize}`)
     setloading(true)

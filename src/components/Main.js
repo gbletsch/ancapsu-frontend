@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import MainTop from './MainTop'
+import NewsForm from './NewsForm'
+import Funnel from './Funnel'
 import Videos from './Videos'
 import LastNews from './LastNews'
 import Help from './Help'
@@ -11,6 +12,7 @@ export default function Main() {
   const [numTargets, setNumTargets] =  useState(0)
   const [numApproval, setNumApproval] =  useState(0)
   const [videos, setVideos] = useState([])
+  const [articles, setarticles] = useState([])
   const [loading, setloading] = useState(true)
 
   useEffect(() => {
@@ -19,7 +21,8 @@ export default function Main() {
         setNumTargets(response.data.NumTargets)
         setNumApproval(response.data.NumApproval)
         setVideos(response.data.Videos)
-        setloading(false) 
+        setarticles(response.data.Articles)
+        setloading(false)
       })
       .catch(error => {
         console.log(error);
@@ -30,18 +33,19 @@ export default function Main() {
   
 
   if (loading) {
-    return <h1>Loading...</h1>
+    return <h3>Loading...</h3>
   }
 
   return (
 
     <main>
-      <MainTop
+      <NewsForm />
+      <Funnel
         numTargets={numTargets}
         numApproval={numApproval}
       />
       <Videos data={videos} />
-      <LastNews />
+      <LastNews data={articles} />
       <Help />
 
     </main>

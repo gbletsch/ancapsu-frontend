@@ -3,22 +3,23 @@ import {
   Button,
   Card,
   CardSubtitle,
-  // CardTitle,
-  // Col,
-  // Form,
-  // FormGroup,
   Input,
   InputGroup,
   InputGroupAddon,
-  // Row
 } from 'reactstrap'
 
 export default function NewsForm() {
   return (
-    <div>
+    <div
+      className='margin-border-main'
+      style={{
+        // borderTop: '2px black solid',
+        // marginTop: '30px',
+        // paddingTop: '20px'
+      }}
+    >
       <h4>newsletter do canal</h4>
       <Card className='mt-2' style={{border: 0}} >
-        {/* <CardTitle>newsletter do canal</CardTitle> */}
         <CardSubtitle
           className='mb-2'
         >Registre seu email na newsletter para ser avisado de novos vídeos</CardSubtitle>
