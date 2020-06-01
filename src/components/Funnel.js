@@ -1,13 +1,9 @@
 import React from 'react'
 import {
-  Button,
   Card,
   CardSubtitle,
   CardTitle,
   Col,
-  Form,
-  FormGroup,
-  Input,
   Row
 } from 'reactstrap'
 

@@ -13,7 +13,7 @@ body {
   -webkit-font-smoothing: antialiazed;
 }
 
-a {
+a, .styled-a {
   text-decoration: none;
   color: #000;
   font-weight: 700;
@@ -40,6 +40,10 @@ CardTitle {
 .badge-dark {
   margin: 2px;
   padding: 2px;
+}
+
+.font-small {
+  font-size: 0.8rem;
 }
 
 /*.button {

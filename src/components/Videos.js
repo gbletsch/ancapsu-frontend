@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, {
+  // useState, 
+  // useEffect 
+} from 'react'
 import { Col, Row } from 'reactstrap'
 import VideoCard from './VideoCard'
-import db from '../database/data.json'
+// import db from '../database/data.json'
 
 export default function Videos(props) {
   // const [data, setData] = useState([])
@@ -11,7 +14,7 @@ export default function Videos(props) {
   //   const newData = db.map(item => item)
   //   setData(newData)
   //   setLoading(false)
-  // }, [])
+  // }, []) 
 
   return (
     <div style={{marginTop: '20px'}} >
@@ -19,7 +22,8 @@ export default function Videos(props) {
       <Row>
         {
           props.data.map(item => {
-            // console.log(item);
+            const authors = item.Authors
+            const ref = `${authors.ProducedLabel} ${authors.Authored.Name} - ${authors.StatusText} ${authors.DateLabel} ${authors.Date}`
             
             return (
               <Col id={item.Id} sm='12' md='6' xl='3'>
@@ -29,6 +33,8 @@ export default function Videos(props) {
                   // linkTo={item.YoutubeLink}
                   title={item.Title}
                   id={item.Id}
+                  categories={item.Categories.Categories}
+                  reference={ref}
                   // allData={item}
                 />
               </Col>

@@ -2,68 +2,129 @@ import React, { useState, useEffect } from 'react'
 import api from '../services/api'
 
 import {
+  Link
+} from 'react-router-dom'
+
+import {
   Badge,
   Card,
-  CardBody,
   CardHeader,
   CardImg,
+  CardLink,
   CardSubtitle,
   CardText,
   CardTitle,
-  Row
 } from 'reactstrap'
 
 export default function VideoPage(props) {
-  // const [videoData, setvideoData] = useState({})
-  // const id = props
-  // console.log('ID', this.props.location.state);
-  
+  const id = props.match.params.id
+  const categories = props.location.state.categories
+  const reference = props.location.state.reference
+  const photo = props.location.state.photo
 
-  // useEffect(() => {
-  //   api.get('Video/Get')
-  //     .then(response => console.log('RESPONSE', response))
-  //     .catch(error => console.log('ERROR', error))
-  // })
-
-  console.log('ID:', props.match.params.id);
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState([])
+  const [script, setScript] = useState([])
+  const [ytLink, setYtLink] = useState([])
+  const [bitchuteLink, setBitchuteLink] = useState([])
   
+  useEffect(() => {
+    api.get(`video/get/${id}`)
+      .then(response => {
+        setTitle(response.data.Title)
+        setDescription(response.data.DescriptionPars)
+        setScript(response.data.ScriptPars)
+        setYtLink(response.data.YoutubeLink)
+        setBitchuteLink(response.data.BitchuteLink)
+      })
+      .catch(error => console.log('ERROR', error))
+  }, [id]) 
 
   return (
     <Card>
-      <Row
-        style={{
-          justifyContent: 'center'
-        }}
-      >
-        <Badge className='badge-dark'>Video</Badge>
-        <Badge className='badge-dark'>Novidades</Badge>
-        <Badge className='badge-dark'>Socialismo</Badge>
-        <Badge className='badge-dark'>Economia</Badge>
-      </Row>
-      <CardBody>
+      <CardHeader className='text-center'>
+        {/* <Row
+          style={{
+            justifyContent: 'center'
+          }}
+        > */}
+          {
+            categories.map(item => {
+              return (
+                <Link
+                  to={{
+                    pathname: `video-category/${item.Label}`,
+                    // state: {
+
+                    // }
+                  }}>
+                    <Badge className='badge-dark'>
+                      {item.Category}
+                    </Badge>
+                  </Link>
+                // <a
+                //   className='font-small'
+                //   cat={item.Label}
+                //   href={`video-category/${item.Label}`}
+                // >
+                //   <Badge className='badge-dark'>
+                //     {item.Category}
+                //   </Badge>
+                // </a>
+              )
+            })
+          }
+        {/* </Row> */}
+      </CardHeader>
+      {/* <CardBody> */}
         <CardTitle
           style={{
             textAlign: 'center'
           }}
           tag='h3'
         >
-          Título do video
+          {title}
         </CardTitle>
-        <CardHeader>
-          Produzido por Homer Simpson,
-          rascunho em 12/12/2019.
+        <CardHeader
+          className='text-center font-small'
+        >
+          {reference}
         </CardHeader>
-        <CardImg
-          src={`https://ancap.su/api/Video/Image?id=520d5283-cd37-4d69-a3bd-5958dcd3dc0e`}
+        {/* <CardBody
+          style={{
+            fontSize: '0.75rem'
+          }}
+        > */}
+        <CardSubtitle className='mt-2 text-center small'>
+          <CardLink href={ytLink}>Assitir no Youtube</CardLink>
+          <CardLink href={bitchuteLink}>Assitir no Bitchute</CardLink>
+        </CardSubtitle>
+        {/* </CardBody> */}
+        <CardImg className='mt-2'
+          src={photo}
           alt='Image'
         />
-        <CardSubtitle>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit blanditiis debitis ad modi ipsa earum eveniet nihil laudantium, voluptates accusantium voluptas corrupti, id qui ipsum placeat inventore dolores doloribus rem?
+        <CardSubtitle className='mt-5'>
+          <CardText>{description[14]}</CardText>
+          {description.slice(0, 13).map(paragraph => {
+            return (
+              <CardText>{paragraph}</CardText>
+            )
+          })}
         </CardSubtitle>
-        <CardText>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ut atque aliquid porro fugit illo quo placeat tenetur architecto quisquam doloribus, laudantium saepe nemo sapiente sed magni hic earum voluptates?
+        <CardText className='mt-5'
+          style={{
+            borderTop: '2px #000 solid'
+          }}
+        >
+          <h3>script</h3>
+          {script.map(paragraph => {
+            return (
+            <p>{paragraph}</p>
+            )
+          })}
         </CardText>
-      </CardBody>
+      {/* </CardBody> */}
     </Card>
   )
 }

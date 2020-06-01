@@ -47,12 +47,15 @@ export default function Top() {
       <Navbar
         style={{
           backgroundColor:'#fc0' }}
-        // color="#ffcc00"
         light
         expand='md'
       >
         <NavbarBrand>
-          ancap.su
+          <a className='styled-a'
+            href='/'
+          >
+            ancap.su
+          </a>
         </NavbarBrand>
         <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
         <Collapse isOpen={isOpen} navbar>

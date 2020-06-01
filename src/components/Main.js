@@ -6,21 +6,12 @@ import LastNews from './LastNews'
 import Help from './Help'
 
 import api from '../services/api'
-import homepageData from '../services/homepage-data.json'
 
 export default function Main() {
   const [numTargets, setNumTargets] =  useState(0)
   const [numApproval, setNumApproval] =  useState(0)
   const [videos, setVideos] = useState([])
   const [loading, setloading] = useState(true)
-
-  // useEffect(() => {
-  //   // console.log(homepageData);
-  //   setNumTargets(homepageData.NumTargets)
-  //   setNumApproval(homepageData.NumApproval)
-  //   setVideos(homepageData.Videos)
-  // }, [])
-
 
   useEffect(() => {
     api.get('news/homepage', { crossdomain: true })

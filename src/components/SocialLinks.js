@@ -1,8 +1,5 @@
 import React from 'react'
 import {
-  Col,
-  ListGroup,
-  ListGroupItem,
   Row
 } from 'reactstrap'
 
@@ -22,17 +19,8 @@ export default function SocialLinks(props) {
       className='justify-content-center'
       style={{
         backgroundColor: 'green',
-        // justifyContent: 'center',
-        // width: '80%',
-        // margin: '40px',
       }}
     >
-      {/* <Col
-        style={{
-          // backgroundColor: 'green',
-        }}
-        className='col-8 d-flex justify-content-around'
-      > */}
         <a href="https://youtube.com/ancapsu">
           <img src={YoutubeLogo} alt="Youtube"/>
         </a>
