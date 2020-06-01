@@ -57,6 +57,9 @@ export default function VideoPage(props) {
                 <Link
                   to={{
                     pathname: `video-category/${item.Label}`,
+                    state: {
+                      nameCat: item.Category
+                    }
                   }}>
                     <Badge className='badge-dark'>
                       {item.Category}

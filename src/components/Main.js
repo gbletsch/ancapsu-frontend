@@ -14,7 +14,7 @@ export default function Main() {
   const [loading, setloading] = useState(true)
 
   useEffect(() => {
-    api.get('news/homepage', { crossdomain: true })
+    api.get('news/homepage')
       .then(response => {
         setNumTargets(response.data.NumTargets)
         setNumApproval(response.data.NumApproval)
@@ -25,7 +25,7 @@ export default function Main() {
         console.log(error);
       })
     
-  }, [loading])
+  }, [])
   console.log(videos);
   
 
