@@ -17,6 +17,7 @@ import {
 } from 'reactstrap'
 
 export default function VideoPage(props) {
+  const [loading, setloading] = useState(true)
   const id = props.match.params.id
   const categories = props.location.state.categories
   const reference = props.location.state.reference
@@ -29,54 +30,43 @@ export default function VideoPage(props) {
   const [bitchuteLink, setBitchuteLink] = useState([])
   
   useEffect(() => {
-    api.get(`video/get/${id}`)
+    const url = `video/get/${id}`
+    console.log('URL', url);
+    
+    api.get(url)
       .then(response => {
         setTitle(response.data.Title)
         setDescription(response.data.DescriptionPars)
         setScript(response.data.ScriptPars)
         setYtLink(response.data.YoutubeLink)
         setBitchuteLink(response.data.BitchuteLink)
+        setloading(false)
       })
       .catch(error => console.log('ERROR', error))
-  }, [id]) 
+  }, [id])
+
+  if (loading) {
+  return <h3>Loading...</h3>
+  }
 
   return (
     <Card>
       <CardHeader className='text-center'>
-        {/* <Row
-          style={{
-            justifyContent: 'center'
-          }}
-        > */}
           {
             categories.map(item => {
               return (
                 <Link
                   to={{
                     pathname: `video-category/${item.Label}`,
-                    // state: {
-
-                    // }
                   }}>
                     <Badge className='badge-dark'>
                       {item.Category}
                     </Badge>
                   </Link>
-                // <a
-                //   className='font-small'
-                //   cat={item.Label}
-                //   href={`video-category/${item.Label}`}
-                // >
-                //   <Badge className='badge-dark'>
-                //     {item.Category}
-                //   </Badge>
-                // </a>
               )
             })
           }
-        {/* </Row> */}
       </CardHeader>
-      {/* <CardBody> */}
         <CardTitle
           style={{
             textAlign: 'center'
@@ -90,16 +80,10 @@ export default function VideoPage(props) {
         >
           {reference}
         </CardHeader>
-        {/* <CardBody
-          style={{
-            fontSize: '0.75rem'
-          }}
-        > */}
         <CardSubtitle className='mt-2 text-center small'>
           <CardLink href={ytLink}>Assitir no Youtube</CardLink>
           <CardLink href={bitchuteLink}>Assitir no Bitchute</CardLink>
         </CardSubtitle>
-        {/* </CardBody> */}
         <CardImg className='mt-2'
           src={photo}
           alt='Image'
@@ -124,7 +108,6 @@ export default function VideoPage(props) {
             )
           })}
         </CardText>
-      {/* </CardBody> */}
     </Card>
   )
 }

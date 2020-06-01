@@ -16,8 +16,6 @@ export default function Main() {
   useEffect(() => {
     api.get('news/homepage', { crossdomain: true })
       .then(response => {
-        // console.log(response.data)
-        
         setNumTargets(response.data.NumTargets)
         setNumApproval(response.data.NumApproval)
         setVideos(response.data.Videos)
@@ -28,6 +26,8 @@ export default function Main() {
       })
     
   }, [loading])
+  console.log(videos);
+  
 
   if (loading) {
     return <h1>Loading...</h1>
