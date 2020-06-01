@@ -31,7 +31,6 @@ export default function VideoPage(props) {
   
   useEffect(() => {
     const url = `video/get/${id}`
-    console.log('URL', url);
     
     api.get(url)
       .then(response => {
@@ -48,7 +47,7 @@ export default function VideoPage(props) {
   if (loading) {
   return <h3>Loading...</h3>
   }
-
+  
   return (
     <Card>
       <CardHeader className='text-center'>
@@ -81,8 +80,26 @@ export default function VideoPage(props) {
           {reference}
         </CardHeader>
         <CardSubtitle className='mt-2 text-center small'>
-          <CardLink href={ytLink}>Assitir no Youtube</CardLink>
-          <CardLink href={bitchuteLink}>Assitir no Bitchute</CardLink>
+          {
+            ytLink ? (
+              <CardLink
+                className='styled-a'
+                href={ytLink}
+              >
+                Assitir no Youtube
+              </CardLink>
+            ) : ''
+          }
+          {
+            bitchuteLink ? (
+                <CardLink
+                  className='styled-a'
+                  href={bitchuteLink}
+                >
+                  Assitir no Bitchute
+                </CardLink> 
+              ) : ''
+            }
         </CardSubtitle>
         <CardImg className='mt-2'
           src={photo}
