@@ -47,7 +47,7 @@ export default function VideoPage(props) {
   if (loading) {
   return <h3>Loading...</h3>
   }
-  
+   
   return (
     <Card>
       <CardHeader className='text-center'>

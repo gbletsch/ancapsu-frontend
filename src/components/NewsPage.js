@@ -87,7 +87,7 @@ export default function VideoPage(props) {
   if (loading) {
     return <h3>Loading...</h3>
   }
-  
+   
   return (
     <Card>
       <CardHeader className='text-center'>
@@ -96,7 +96,7 @@ export default function VideoPage(props) {
               return (
                 <Link
                   to={{
-                    pathname: `video-category/${item.Label}`,
+                    pathname: `news-category/${item.Label}`,
                     state: {
                       nameCat: item.Category
                     }
@@ -146,14 +146,6 @@ export default function VideoPage(props) {
             src={photo}
             alt='Image'
           />
-          {/* <CardSubtitle className='mt-5'>
-            <CardText>{description[14]}</CardText>
-            {description.slice(0, 13).map(paragraph => {
-              return (
-                <CardText>{paragraph}</CardText>
-              )
-            })}
-          </CardSubtitle> */}
           <CardText className='mt-5'
             style={{
               borderTop: '2px #000 solid',
@@ -189,7 +181,7 @@ export default function VideoPage(props) {
                           </audio> */}
                           <a
                             className='styled-a'
-                            href='https://ancap.su/api/Audio/3c04aa84-70db-4e14-b26d-eba5707ff0df/0'
+                            href={`https://ancap.su/api/Audio/${item.Id}/0`}
                           >
                             Escute o audio
                           </a>
