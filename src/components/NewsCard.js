@@ -16,12 +16,13 @@ function NewsCard(props) {
     Id,
     Title
   } = props.data
+  const photo = `https://ancap.su/api/Article/Image?id=${Id}`
   // console.log(props.data);
   
   return (
     <Card>
       <CardImg
-        src={`https://ancap.su/api/Article/Image?id=${Id}`}
+        src={photo}
         alt='image'
       />
       <CardBody>
@@ -33,7 +34,8 @@ function NewsCard(props) {
             to={{
               pathname: `/article/${Id}`,
               state: {
-                data: props.data
+                data: props.data,
+                photo: photo
               }
             }}
           >
