@@ -4,6 +4,7 @@ import
 from 'react'
 
 import {
+  Container,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
@@ -11,125 +12,57 @@ import {
   Navbar,
   NavbarBrand,
   NavbarToggler,
+  NavItem,
+  NavLink,
   UncontrolledDropdown,
   Collapse
 } from 'reactstrap'
 
 export default function Top() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [openVideo, setOpenVideo] = useState(false)
-  const [openNews, setOpenNews] = useState(false)
-  const [openAccount, setOpenAccount] = useState(false)
+  const [isOpen, setisOpen] = useState(false)
 
-  function handleClick (e) {
-    e.preventDefault()
-    setOpenVideo(false)
-    setOpenNews(false)
-    setOpenAccount(false)
-    switch (e.target.id) {
-      case 'openVideo':
-        setOpenVideo(true)
-        break;
-      case 'openNews':
-        setOpenNews(true)
-        break;
-      case 'openAccount':
-        setOpenAccount(true)
-        break;
-      default:
-        break;
-    }
-    console.log(e.target.id);
-  }
+  const toggle = () => setisOpen(!isOpen)
 
   return (
     <div>
       <Navbar
         style={{
-          backgroundColor:'#fc0' }}
+          background: 'linear-gradient(132deg, rgba(255,204,0,1) 52%, rgba(0,0,0,1) 100%)'
+
+        }}
+        // color='light'
         light
         expand='md'
       >
-        <NavbarBrand>
-          <a className='styled-a'
-            href='/'
-          >
-            ancap.su
-          </a>
+        <NavbarBrand
+          href='/'
+        >
+          Ancap.su
         </NavbarBrand>
-        <NavbarToggler onClick={() => setIsOpen(!isOpen)} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret
-                id='openVideo'
-                onClick={e => handleClick(e)}
-              >
-                videos
-              </DropdownToggle>
-                <Collapse isOpen={openVideo}>
-                  <DropdownMenu>
-                    <DropdownItem>
-                      Teoria libertária              </DropdownItem>
-                    <DropdownItem>
-                      Visão libertária
-                    </DropdownItem>
-                    <DropdownItem>
-                      Cômicos
-                    </DropdownItem>
-                    <DropdownItem>
-                      Procurar
-                    </DropdownItem>
-                  </DropdownMenu>
-                </Collapse>
-              <DropdownToggle nav caret
-                id='openNews'
-                onClick={e => handleClick(e)}
-              >
-                matérias
-              </DropdownToggle>
-              <Collapse isOpen={openNews}>
-                <DropdownMenu>
-                  <DropdownItem>
-                    Artigos
-                  </DropdownItem>
-                  <DropdownItem>
-                    Tapas
-                  </DropdownItem>
-                  <DropdownItem>
-                    Crônicas
-                  </DropdownItem>
-                  <DropdownItem>
-                    Procurar
-                  </DropdownItem>
-                </DropdownMenu>
-              </Collapse>
-              <DropdownToggle nav caret
-                id='openAccount'
-                onClick={e => handleClick(e)}
-              >
-                minha conta
-              </DropdownToggle>
-              <Collapse isOpen={openAccount}>
-                <DropdownMenu>
-                  <DropdownItem>
-                    Autenticar
-                  </DropdownItem>
-                  <DropdownItem>
-                    Criar conta
-                  </DropdownItem>
-                  <DropdownItem>
-                    Esqueci a senha
-                  </DropdownItem>
-                  <DropdownItem>
-                    Confirmar email
-                  </DropdownItem>
-                  <DropdownItem>
-                    Ajuda
-                  </DropdownItem>
-                </DropdownMenu>
-              </Collapse>
-            </UncontrolledDropdown>
+        <NavbarToggler 
+          onClick={toggle}
+          style={{
+            backgroundColor: '#fc0',
+            // color: '#fc0',
+          }}
+        />
+        <Collapse
+          isOpen={isOpen}
+          navbar
+        >
+          <Nav className='mr-auto' navbar>
+            <NavItem>
+              <NavLink href='/'>Videos</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='/'>Matérias</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='/'>Pautas</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='/'>Minha conta</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
