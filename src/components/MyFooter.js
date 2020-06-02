@@ -16,6 +16,7 @@ export default function MyFooter() {
       style={{
         backgroundColor: 'black',
         marginTop: '50px',
+        paddingBottom: '30px',
         paddingTop: '50px'
       }}  
     >
@@ -63,9 +64,6 @@ export default function MyFooter() {
             ancapsu@gmail.com
           </CardLink>
         </Card>
-      </Row>
-      <Row>
-        <SocialLinks color='white' />
       </Row>
     </footer>
   )
