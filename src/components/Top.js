@@ -4,17 +4,12 @@ import
 from 'react'
 
 import {
-  Container,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
   Nav,
   Navbar,
   NavbarBrand,
   NavbarToggler,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
   Collapse
 } from 'reactstrap'
 
@@ -30,7 +25,6 @@ export default function Top() {
           background: 'linear-gradient(132deg, rgba(255,204,0,1) 52%, rgba(0,0,0,1) 100%)'
 
         }}
-        // color='light'
         light
         expand='md'
       >
@@ -43,7 +37,6 @@ export default function Top() {
           onClick={toggle}
           style={{
             backgroundColor: '#fc0',
-            // color: '#fc0',
           }}
         />
         <Collapse

@@ -3,7 +3,6 @@ import React, {
 } from 'react'
 
 import {
-  Button,
   CardColumns,
 } from 'reactstrap'
 
@@ -40,7 +39,6 @@ export default function VideoCategoryPage(props) {
   }, [loading, url])
 
   
-  // return <h1>{url}</h1>
 
 
 

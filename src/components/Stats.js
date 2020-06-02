@@ -1,18 +1,8 @@
 import React from 'react'
 
 import {
-  // BitchuteLogo,
-  FaFacebookSquare,
-  // GabLogo,
-  // MindsLogo,
-  // TwitterLogo,
-  // YoutubeLogo
-} from 'react-icons/fa'
-
-import {
   Card,
   CardBody,
-  CardLink,
   ListGroup,
   ListGroupItem
 } from 'reactstrap'
