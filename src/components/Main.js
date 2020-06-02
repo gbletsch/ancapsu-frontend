@@ -29,7 +29,7 @@ export default function Main() {
       })
     
   }, [])
-  console.log(videos);
+  // console.log(videos);
   
 
   if (loading) {

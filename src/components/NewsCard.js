@@ -16,7 +16,7 @@ function NewsCard(props) {
     Id,
     Title
   } = props.data
-  console.log(props.data);
+  // console.log(props.data);
   
   return (
     <Card>
