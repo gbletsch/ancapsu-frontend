@@ -7,7 +7,6 @@ import {
   CardBody,
   CardHeader,
   CardImg,
-  CardImgOverlay,
   CardTitle
 } from 'reactstrap'
  

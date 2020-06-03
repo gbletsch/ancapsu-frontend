@@ -1,8 +1,6 @@
 import React from 'react'
 import {
   CardColumns,
-  Col,
-  Row
 } from 'reactstrap'
 import VideoCard from './VideoCard'
 

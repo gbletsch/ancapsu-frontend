@@ -3,6 +3,7 @@ import React, {
 } from 'react'
 
 import {
+  Button,
   CardColumns,
 } from 'reactstrap'
 
@@ -38,17 +39,12 @@ export default function VideoCategoryPage(props) {
       .catch(error => console.log(error))
   }, [loading, url])
 
-  
-
-
-
-
-  // function handleClick(e) {
-  //   e.preventDefault()
-  //   setoffset(offset + pageSize)
-  //   seturl(`/article/bycategory/${cat}&ini=${offset + pageSize}&max=${pageSize}`)
-  //   setloading(true)
-  // }
+  function handleClick(e) {
+    e.preventDefault()
+    setoffset(offset + pageSize)
+    seturl(`/article/bycategory/${cat}&ini=${offset + pageSize}&max=${pageSize}`)
+    setloading(true)
+  }
 
   if (loading) {
     return <h3>Loading...</h3>
@@ -77,14 +73,8 @@ export default function VideoCategoryPage(props) {
           })
         }
         {console.log(dataset)}
-        
       </CardColumns>
-
+      <Button onClick={e => handleClick(e)}>Mais artigos</Button>
     </div>
   )
-    // <div>
-  //     <Button onClick={e => handleClick(e)}>Mais videos</Button>
-    // </div>
-
-  // )
 }
