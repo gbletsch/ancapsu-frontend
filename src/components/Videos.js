@@ -1,28 +1,32 @@
 import React from 'react'
-import { Col, Row } from 'reactstrap'
+import {
+  CardColumns,
+  Col,
+  Row
+} from 'reactstrap'
 import VideoCard from './VideoCard'
-// import { Link } from 'react-router-dom'
 
 export default function Videos(props) {
+  const { data } = props
 
   return (
     <div
       className='margin-border-main'
     >
       <h4>últimos videos do canal</h4>
-      <Row>
+      <CardColumns
+        style={{
+          marginTop: '20px'
+        }}        
+      >
         {
-          props.data.map(item => {            
+          data.map(item => {            
             return (
-              <Col id={item.Id} sm='12' md='6' xl='3'>
-                <VideoCard
-                  allData={item}
-                />
-              </Col>
+              <VideoCard allData={item} />
             )
           })
         }
-      </Row>
+      </CardColumns>
     </div>
   )
 }

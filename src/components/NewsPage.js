@@ -23,7 +23,6 @@ import {
 export default function VideoPage(props) {
   const [loading, setloading] = useState(true)
   const id = props.match.params.id
-  // console.log('props', props.location.state);
   
   const categories = props.location.state.data.Categories.Categories
   const photo = props.location.state.photo
@@ -129,7 +128,6 @@ export default function VideoPage(props) {
           -&nbsp;
           {status.label} <b>{status.name}</b>&nbsp;
         </CardHeader>
-        <CardBody>
           <CardSubtitle className='mt-2 text-center small'>
             {
               link ? (
@@ -146,55 +144,57 @@ export default function VideoPage(props) {
             src={photo}
             alt='Image'
           />
-          <CardText className='mt-5'
-            style={{
-              borderTop: '2px #000 solid',
-              paddingTop: '20px'
-            }}
-          >
-            {text.map(paragraph => {
-              return (
-              <p>{paragraph}</p>
-              )
-            })}
-          </CardText>
-          <CardFooter>
-            <ListGroup>
-            {
-              actions.map(item => {
-                console.log('item', item);
+          <CardBody>
+            <CardText className='mt-5'
+              style={{
+                borderTop: '2px #000 solid',
+                paddingTop: '20px'
+              }}
+            >
+              {text.map(paragraph => {
                 return (
-                  <ListGroupItem
-                    key={item.Id}
-                  >
-                    {item.TypeName} por {item.UserName} em {item.Date}<br/>
-                    {item.TypeName !== 'Sugerido' ? `(${item.BillableWords} palavras)`: ''}<br/>
-                    {
-                      item.Audios.length > 0 ? (
-                        <div>
-                          {/* <audio controls>
-                            <source
-                              src='https://ancap.su/api/Audio/3c04aa84-70db-4e14-b26d-eba5707ff0df/0'
-                              type='audio/mp3'
-                            />
-                            Seu navegador não suporta audio.
-                          </audio> */}
-                          <a
-                            className='styled-a'
-                            href={`https://ancap.su/api/Audio/${item.Id}/0`}
-                          >
-                            Escute o audio
-                          </a>
-                        </div>
-                      ): ''
-                    }
-                  </ListGroupItem>
+                <p>{paragraph}</p>
                 )
-              })
-            }
-            </ListGroup>
-          </CardFooter>
-        </CardBody>
+              })}
+            </CardText>
+          </CardBody>
+
+            <CardFooter>
+              <ListGroup>
+              {
+                actions.map(item => {
+                  console.log('item', item);
+                  return (
+                    <ListGroupItem
+                      key={item.Id}
+                    >
+                      {item.TypeName} por {item.UserName} em {item.Date}<br/>
+                      {item.TypeName !== 'Sugerido' ? `(${item.BillableWords} palavras)`: ''}<br/>
+                      {
+                        item.Audios.length > 0 ? (
+                          <div>
+                            {/* <audio controls>
+                              <source
+                                src='https://ancap.su/api/Audio/3c04aa84-70db-4e14-b26d-eba5707ff0df/0'
+                                type='audio/mp3'
+                              />
+                              Seu navegador não suporta audio.
+                            </audio> */}
+                            <a
+                              className='styled-a'
+                              href={`https://ancap.su/api/Audio/${item.Id}/0`}
+                            >
+                              Escute o audio
+                            </a>
+                          </div>
+                        ): ''
+                      }
+                    </ListGroupItem>
+                  )
+                })
+              }
+              </ListGroup>
+            </CardFooter>
     </Card>
   )
 }

@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import {
+  Badge,
   Card,
+  CardBody,
+  CardHeader,
   CardImg,
   CardImgOverlay,
   CardTitle
@@ -30,27 +33,24 @@ export default function VideoCard(props) {
   }
  
   return (
-    <Card className='mt-2 text-right' >
+    <Card
+      style={{
+        maxWidth: '20rem'
+      }}
+    >
       <CardImg
-        top
-        width='100%'
         src={photo}
-        alt='Card Image'
+        alt='image'
       />
-      <CardImgOverlay
-        className='d-flex align-items-end'
-      >
+      <CardHeader>
+        <Badge color='warning'>Video</Badge>
+      </CardHeader>
+      <CardBody>
         <CardTitle
-          style={{
-            color: 'white'
-            
-          }}
+          className='text-center'
         >
           <Link
-            className='styled-a'// text-center'
-            style={{
-              backgroundColor: 'lightgray'
-            }}
+            className='styled-a'
             to={{
               pathname: `/video/${id}`,
               state: {
@@ -63,7 +63,7 @@ export default function VideoCard(props) {
             {title}
           </Link>
         </CardTitle>
-      </CardImgOverlay>
+      </CardBody>
     </Card>
   )
 }
