@@ -8,6 +8,7 @@ import {
 import {
   Badge,
   Card,
+  CardBody,
   CardHeader,
   CardImg,
   CardLink,
@@ -51,84 +52,86 @@ export default function VideoPage(props) {
   return (
     <Card>
       <CardHeader className='text-center'>
-          {
-            categories.map(item => {
-              return (
-                <Link
-                  to={{
-                    pathname: `video-category/${item.Label}`,
-                    state: {
-                      nameCat: item.Category
-                    }
-                  }}
-                >
-                  <Badge className='badge-dark'>
-                    {item.Category}
-                  </Badge>
-                </Link>
-              )
-            })
-          }
-      </CardHeader>
-        <CardTitle
-          style={{
-            textAlign: 'center'
-          }}
-          tag='h3'
-        >
-          {title}
-        </CardTitle>
-        <CardHeader
-          className='text-center font-small'
-        >
-          {reference}
-        </CardHeader>
-        <CardSubtitle className='mt-2 text-center small'>
-          {
-            ytLink ? (
-              <CardLink
-                className='styled-a'
-                href={ytLink}
+        {
+          categories.map(item => {
+            return (
+              <Link
+                to={{
+                  pathname: `video-category/${item.Label}`,
+                  state: {
+                    nameCat: item.Category
+                  }
+                }}
               >
-                Assitir no Youtube
-              </CardLink>
-            ) : ''
-          }
-          {
-            bitchuteLink ? (
-                <CardLink
-                  className='styled-a'
-                  href={bitchuteLink}
-                >
-                  Assitir no Bitchute
-                </CardLink> 
-              ) : ''
-            }
-        </CardSubtitle>
-        <CardImg className='mt-2'
-          src={photo}
-          alt='Image'
-        />
+                <Badge className='badge-dark'>
+                  {item.Category}
+                </Badge>
+              </Link>
+            )
+          })
+        }
+      </CardHeader>
+      <CardTitle
+        style={{
+          textAlign: 'center'
+        }}
+        tag='h3'
+      >
+        {title}
+      </CardTitle>
+      <CardHeader
+        className='text-center font-small'
+      >
+        {reference}
+      </CardHeader>
+      <CardSubtitle className='mt-2 text-center small'>
+        {
+          ytLink ? (
+            <CardLink
+              className='styled-a'
+              href={ytLink}
+            >
+              Assitir no Youtube
+            </CardLink>
+          ) : ''
+        }
+        {
+          bitchuteLink ? (
+            <CardLink
+              className='styled-a'
+              href={bitchuteLink}
+            >
+              Assitir no Bitchute
+            </CardLink> 
+          ) : ''
+        }
+      </CardSubtitle>
+      <CardImg className='mt-2'
+        src={photo}
+        alt='Image'
+      />
+      <CardBody>
         <CardSubtitle className='mt-5'>
           <CardText>{description[14]}</CardText>
-          {description.slice(0, 13).map(paragraph => {
-            return (
-              <CardText>{paragraph}</CardText>
-            )
-          })}
-        </CardSubtitle>
-        <CardText className='mt-5'
-          style={{
-            borderTop: '2px #000 solid'
-          }}
-        >
-          <h3>script</h3>
-          {script.map(paragraph => {
-            return (
-            <p>{paragraph}</p>
-            )
-          })}
-        </CardText>
+            {description.slice(0, 13).map(paragraph => {
+              return (
+                <CardText>{paragraph}</CardText>
+              )
+            })}
+          </CardSubtitle>
+          <CardText className='mt-5'
+            style={{
+              borderTop: '2px #000 solid'
+            }}
+          >
+            <h3>script</h3>
+            {script.map(paragraph => {
+              return (
+              <p>{paragraph}</p>
+              )
+            })}
+          </CardText>
+      </CardBody>
     </Card>
   )
 }

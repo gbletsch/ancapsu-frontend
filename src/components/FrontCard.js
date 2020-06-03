@@ -1,10 +1,8 @@
 import React from 'react'
 
 import {
-  Badge,
   Card,
   CardBody,
-  CardHeader,
   CardImg,
   CardTitle
 } from 'reactstrap'
@@ -19,21 +17,14 @@ function NewsCard(props) {
     Title
   } = props.data
   const photo = `https://ancap.su/api/Article/Image?id=${Id}`
+  // console.log(props.data);
   
   return (
-    <Card
-      style={{
-        maxWidth: '20rem'
-      }}
-    >
+    <Card>
       <CardImg
         src={photo}
         alt='image'
       />
-      <CardHeader>
-        <Badge color='warning'>artigo</Badge>
-      </CardHeader>
-
       <CardBody>
         <CardTitle
           className='text-center'

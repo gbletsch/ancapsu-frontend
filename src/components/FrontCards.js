@@ -2,29 +2,35 @@ import React from 'react'
 import {
   CardColumns,
 } from 'reactstrap'
-import VideoCard from './VideoCard'
+
+import NewsCard from './NewsCard'
 
 export default function Videos(props) {
-  const { data } = props
+  const {
+    data,
+    title
+  } = props
 
   return (
     <div
       className='margin-border-main'
     >
-      <h4>últimos videos do canal</h4>
+      <h4>{title}</h4>
       <CardColumns
         style={{
           marginTop: '20px'
-        }}        
+        }}
       >
         {
-          data.map(item => {            
-            return (
-              <VideoCard allData={item} />
-            )
+          data.map(firstItem => {
+            return firstItem.Articles.map(item => {
+              return (
+                <NewsCard id={item.Id} data={item} />
+              )
+            })
           })
         }
       </CardColumns>
     </div>
-  )
+  ) 
 }
