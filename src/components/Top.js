@@ -62,19 +62,19 @@ export default function Top() {
               >
                 Vídeos
               </Link>
-              {/* <NavLink
-                href= '/video/video-category/video'
-              >
-                Videos
-              </NavLink> */}
             </NavItem>
             <NavItem>
-              <a
+              <Link
                 className='nav-link'
-                href={'/article/news-category/article'}
+                to={{
+                  pathname: `/article/news-category/article`,
+                  state: {
+                    nameCat: 'Artigos'
+                  }
+                }}
               >
-                Matérias
-              </a>
+                Artigos
+              </Link>
             </NavItem>
             <NavItem>
               <NavLink href='/'>Pautas</NavLink>
