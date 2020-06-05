@@ -5,7 +5,6 @@ import {
   Badge,
   Card,
   CardBody,
-  CardHeader,
   CardImg,
   CardImgOverlay,
   CardTitle
@@ -31,7 +30,7 @@ export default function VideoCard(props) {
     title = allData.Title
     categories = allData.Categories.Categories  
   }
- 
+  
   return (
     <Card
       style={{
@@ -49,11 +48,12 @@ export default function VideoCard(props) {
         }}
       >
         <Badge
+          className='card-badge'
           color='warning'
           style={{
-            position: "absolute",
-            top: '5px',
-            left: '5px'
+            // position: "absolute",
+            // top: '5px',
+            // left: '5px'
           }}
           // className='badge-pill'
         >

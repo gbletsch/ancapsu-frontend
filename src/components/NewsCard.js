@@ -6,6 +6,7 @@ import {
   CardBody,
   CardHeader,
   CardImg,
+  CardImgOverlay,
   CardTitle
 } from 'reactstrap'
 
@@ -23,23 +24,29 @@ function NewsCard(props) {
   return (
     <Card
       style={{
-        maxWidth: '20rem'
+        border: '1px black solid'
+        // maxWidth: '20rem'
       }}
     >
       <CardImg
         src={photo}
         alt='image'
       />
-      <CardHeader>
-        <Badge color='warning'>artigo</Badge>
-      </CardHeader>
+      <CardImgOverlay>
+        <Badge
+          className='card-badge'
+          color='warning'
+        >
+          artigo
+        </Badge>
+      </CardImgOverlay>
 
       <CardBody>
         <CardTitle
           className='text-center'
         >
           <Link
-            className='styled-a'
+            className='styled-a stretched-link'
             to={{
               pathname: `/article/${Id}`,
               state: {

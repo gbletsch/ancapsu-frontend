@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  CardColumns,
   Col,
   Row
 } from 'reactstrap'
