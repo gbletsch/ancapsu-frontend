@@ -7,6 +7,7 @@ import {
   CardBody,
   CardHeader,
   CardImg,
+  CardImgOverlay,
   CardTitle
 } from 'reactstrap'
  
@@ -41,15 +42,30 @@ export default function VideoCard(props) {
         src={photo}
         alt='image'
       />
-      <CardHeader>
-        <Badge color='warning'>Video</Badge>
-      </CardHeader>
+      <CardImgOverlay
+        style={{
+          justifyContent: 'start'
+          // margin: '0 auto'
+        }}
+      >
+        <Badge
+          color='warning'
+          style={{
+            position: "absolute",
+            top: '5px',
+            left: '5px'
+          }}
+          // className='badge-pill'
+        >
+          Video
+        </Badge>
+      </CardImgOverlay>
       <CardBody>
         <CardTitle
-          className='text-center'
+          // className='text-center'
         >
           <Link
-            className='styled-a'
+            className='styled-a stretched-link'
             to={{
               pathname: `/video/${id}`,
               state: {
