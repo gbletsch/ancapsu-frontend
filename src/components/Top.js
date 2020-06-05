@@ -56,7 +56,7 @@ export default function Top() {
             <NavItem>
               <a
                 className='nav-link'
-                href='/article/news-category/article'
+                href={'/article/news-category/article'}
               >
                 Matérias
               </a>
