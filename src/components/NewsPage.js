@@ -46,7 +46,6 @@ export default function VideoPage(props) {
     
     api.get(url)
       .then(response => {
-        console.log('response', response.data.Actions);
         
         setTitle(response.data.Title)
         setsuggested({
@@ -163,7 +162,6 @@ export default function VideoPage(props) {
               <ListGroup>
               {
                 actions.map(item => {
-                  console.log('item', item);
                   return (
                     <ListGroupItem
                       key={item.Id}

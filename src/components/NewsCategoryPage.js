@@ -14,8 +14,12 @@ import api from "../services/api"
 export default function VideoCategoryPage(props) {
   const [loading, setloading] = useState(true)
 
-  // console.log('props', props.match);
-  const nameCat = props.location.state.nameCat
+  let nameCat = 'Artigos'
+  try {
+    nameCat = props.location.state.nameCat    
+  } catch (error) {
+    console.log('error', error);
+  }
 
   const cat = props.match.params.cat
   const pageSize = 10  

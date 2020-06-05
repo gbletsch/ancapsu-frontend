@@ -51,25 +51,18 @@ export default function Top() {
         >
           <Nav className='mr-auto' navbar>
             <NavItem>
-              {/* <Link
-                  to={{
-                    pathname: `video-category/video`,
-                    state: {
-                      nameCat: 'Video'
-                    }
-                  }}
-                >
-                  Videos
-                </Link> */}
               <NavLink
                 href= '/video/video-category/video'
-                nameCat='Video'
               >
                 Videos
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href='/'>Matérias</NavLink>
+              <NavLink
+                href='/article/news-category/article'
+              >
+                Matérias
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href='/'>Pautas</NavLink>
