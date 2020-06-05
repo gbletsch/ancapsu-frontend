@@ -13,7 +13,14 @@ import api from "../services/api"
 
 export default function VideoCategoryPage(props) {
   const cat = props.match.params.cat
-  const nameCat = props.location.state.nameCat
+
+  let nameCat = 'Videos'
+  try {
+    nameCat = props.location.state.nameCat
+  } catch(error) {
+    console.log("error", error);
+  }
+
   const pageSize = 10
   
   const [offset, setoffset] = useState(0)
@@ -63,12 +70,10 @@ export default function VideoCategoryPage(props) {
         {
           dataset.map(item => {
             return (
-              <VideoCard allData={item} />
+              <VideoCard key={item.Id} allData={item} />
             )
           })
         }
-        {console.log(dataset)}
-        
       </CardColumns>
       <Button onClick={e => handleClick(e)}>Mais videos</Button>
     </div>

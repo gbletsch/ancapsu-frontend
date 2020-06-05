@@ -4,6 +4,10 @@ import
 from 'react'
 
 import {
+  Link
+} from 'react-router-dom'
+
+import {
   Nav,
   Navbar,
   NavbarBrand,
@@ -47,7 +51,22 @@ export default function Top() {
         >
           <Nav className='mr-auto' navbar>
             <NavItem>
-              <NavLink href='/'>Videos</NavLink>
+              {/* <Link
+                  to={{
+                    pathname: `video-category/video`,
+                    state: {
+                      nameCat: 'Video'
+                    }
+                  }}
+                >
+                  Videos
+                </Link> */}
+              <NavLink
+                href= '/video/video-category/video'
+                nameCat='Video'
+              >
+                Videos
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href='/'>Matérias</NavLink>
