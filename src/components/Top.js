@@ -4,10 +4,6 @@ import
 from 'react'
 
 import {
-  Link
-} from 'react-router-dom'
-
-import {
   Nav,
   Navbar,
   NavbarBrand,
@@ -58,11 +54,12 @@ export default function Top() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
+              <a
+                className='nav-link'
                 href='/article/news-category/article'
               >
                 Matérias
-              </NavLink>
+              </a>
             </NavItem>
             <NavItem>
               <NavLink href='/'>Pautas</NavLink>

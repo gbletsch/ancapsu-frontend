@@ -68,15 +68,12 @@ export default function VideoCategoryPage(props) {
       <CardColumns>
         {
           dataset.map(item => {
-            console.log('item', item)
-
             return (
               <div>
                 <NewsCard data={item} />              </div>
             )
           })
         }
-        {console.log(dataset)}
       </CardColumns>
       <Button onClick={e => handleClick(e)}>Mais artigos</Button>
     </div>
