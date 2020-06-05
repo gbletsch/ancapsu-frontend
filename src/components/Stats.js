@@ -8,7 +8,6 @@ import {
 } from 'reactstrap'
 
 export default function Stats(props) {
-  console.log('props', props.data)
 
   const { data } = props
 

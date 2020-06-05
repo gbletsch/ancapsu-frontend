@@ -1,7 +1,10 @@
 import React from 'react'
 import {
   CardColumns,
+  Col,
+  Row
 } from 'reactstrap'
+
 import VideoCard from './VideoCard'
 
 export default function Videos(props) {
@@ -12,19 +15,25 @@ export default function Videos(props) {
       className='margin-border-main'
     >
       <h4>últimos videos do canal</h4>
-      <CardColumns
-        style={{
-          marginTop: '20px'
-        }}        
+      <Row
+        className='d-flex justify-content-center'
       >
         {
-          data.map(item => {            
+          data.map(item => {
+            console.log(item);
+
             return (
-              <VideoCard allData={item} />
+              <Col
+                className='d-flex justify-content-center'
+                sm='6'
+                id={item.Id}
+              >
+                <VideoCard allData={item} />
+              </Col>
             )
           })
         }
-      </CardColumns>
+      </Row>
     </div>
   )
 }
