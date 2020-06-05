@@ -19,13 +19,11 @@ export default function Videos(props) {
       >
         {
           data.map(item => {
-            console.log(item);
-
             return (
               <Col
                 className='d-flex justify-content-center'
                 sm='6'
-                id={item.Id}
+                key={item.Id}
               >
                 <VideoCard allData={item} />
               </Col>

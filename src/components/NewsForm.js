@@ -25,10 +25,10 @@ export default function NewsForm() {
           >
             Registre seu email na newsletter para ser avisado de novos vídeos
           </CardSubtitle>
-          <CardText
+          <div
             className='d-flex justify-content-center'
           >
-            <div>
+            <span>
               <InputGroup>
                 <InputGroupAddon addonType='append'>
                   <Input
@@ -40,8 +40,8 @@ export default function NewsForm() {
                   <Button>Cadastrar</Button>
                 </InputGroupAddon>
               </InputGroup>
-            </div>
-          </CardText>
+            </span>
+          </div>
         </CardBody>
       </Card>
     </div>

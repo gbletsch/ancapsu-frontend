@@ -4,7 +4,6 @@ import {
   Badge,
   Card,
   CardBody,
-  CardHeader,
   CardImg,
   CardImgOverlay,
   CardTitle
@@ -25,7 +24,6 @@ function NewsCard(props) {
     <Card
       style={{
         border: '1px black solid'
-        // maxWidth: '20rem'
       }}
     >
       <CardImg

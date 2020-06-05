@@ -22,7 +22,7 @@ export default function Videos(props) {
           data.map(firstItem => {
             return firstItem.Articles.map(item => {
               return (
-                <NewsCard id={item.Id} data={item} />
+                <NewsCard key={item.Id} data={item} />
               )
             })
           })

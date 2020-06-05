@@ -24,8 +24,6 @@ export default function Main() {
   useEffect(() => {
     api.get('news/homepage')
       .then(response => {
-        console.log('response', response.data.Statistics);
-        
         setNumTargets(response.data.NumTargets)
         setNumApproval(response.data.NumApproval)
         setVideos(response.data.Videos)
