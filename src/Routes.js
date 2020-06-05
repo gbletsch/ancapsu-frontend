@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom'
@@ -13,7 +12,6 @@ import NewsCategoryPage from './components/NewsCategoryPage'
 
 function Routes() {
   return (
-    <BrowserRouter>
       <Switch>
         <Route path='/' exact component={Main} />
         <Route path='/video/video-category/:cat' exact component={VideoCategoryPage} />
@@ -21,9 +19,7 @@ function Routes() {
         <Route path='/video/:id' component={VideoPage} />
         <Route path='/article/:id' component={NewsPage} />
       </Switch>
-    </BrowserRouter>
   );
 }
 
 export default Routes
-// http://localhost:3000/article/video-category/expression

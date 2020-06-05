@@ -4,13 +4,17 @@ import
 from 'react'
 
 import {
+  Link
+} from 'react-router-dom'
+
+import {
+  Collapse,
   Nav,
   Navbar,
   NavbarBrand,
   NavbarToggler,
   NavItem,
-  NavLink,
-  Collapse
+  NavLink
 } from 'reactstrap'
 
 export default function Top() {
@@ -44,14 +48,25 @@ export default function Top() {
         <Collapse
           isOpen={isOpen}
           navbar
-        >
+        > 
           <Nav className='mr-auto' navbar>
             <NavItem>
-              <NavLink
+              <Link
+                className='nav-link'
+                to={{
+                  pathname: `/video/video-category/video`,
+                  state: {
+                    nameCat: 'Vídeo'
+                  }
+                }}
+              >
+                Vídeos
+              </Link>
+              {/* <NavLink
                 href= '/video/video-category/video'
               >
                 Videos
-              </NavLink>
+              </NavLink> */}
             </NavItem>
             <NavItem>
               <a
