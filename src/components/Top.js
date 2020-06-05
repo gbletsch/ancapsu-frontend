@@ -19,7 +19,9 @@ export default function Top() {
   const toggle = () => setisOpen(!isOpen)
 
   return (
-    <div>
+    <div
+      className='no-margin'
+    >
       <Navbar
         style={{
           background: 'linear-gradient(132deg, rgba(255,204,0,1) 52%, rgba(0,0,0,1) 100%)'
