@@ -15,17 +15,12 @@ export default function NewsForm() {
   return (
     <div
       className='margin-border-main'
-      style={{
-        // borderTop: '2px black solid',
-        // marginTop: '30px',
-        // paddingTop: '20px'
-      }}
     >
+      <h4>newsletter do canal</h4>
       <Card
         className='mt-2'
       >
         <CardBody>
-          <CardTitle tag='h4'>newsletter do canal</CardTitle>
           <CardSubtitle
             className='mb-2'
           >
