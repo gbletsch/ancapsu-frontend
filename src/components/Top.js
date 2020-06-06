@@ -20,7 +20,9 @@ import {
 export default function Top() {
   const [isOpen, setisOpen] = useState(false)
 
-  const toggle = () => setisOpen(!isOpen)
+  const toggle = () => {
+    return setisOpen(!isOpen)
+  }
 
   return (
     <div
@@ -29,7 +31,6 @@ export default function Top() {
       <Navbar
         style={{
           background: 'linear-gradient(132deg, rgba(255,204,0,1) 52%, rgba(0,0,0,1) 100%)'
-
         }}
         light
         expand='md'
@@ -53,6 +54,7 @@ export default function Top() {
             <NavItem>
               <Link
                 className='nav-link'
+                onClick={() => toggle()}
                 to={{
                   pathname: `/video/video-category/video`,
                   state: {
@@ -65,6 +67,7 @@ export default function Top() {
             </NavItem>
             <NavItem>
               <Link
+                onClick={() => toggle()}
                 className='nav-link'
                 to={{
                   pathname: `/article/news-category/article`,
@@ -77,7 +80,19 @@ export default function Top() {
               </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='/'>Pautas</NavLink>
+              <Link
+                className='nav-link'
+                onClick={() => toggle()}
+                to={{
+                  pathname: '/target-list',
+                  state: {
+                    title: 'pautas',
+                    subtitle: 'Lista das pautas cadastradas:'
+                  }
+                }}
+              >
+                Pautas
+              </Link>
             </NavItem>
             <NavItem>
               <NavLink href='/'>Minha conta</NavLink>

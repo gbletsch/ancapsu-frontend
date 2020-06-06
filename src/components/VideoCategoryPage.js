@@ -32,7 +32,7 @@ export default function VideoCategoryPage(props) {
 
 
   useEffect(() => {
-    console.log(url);
+    // console.log(url);
     
     api.get(url)
       .then(response => {

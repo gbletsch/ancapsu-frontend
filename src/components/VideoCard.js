@@ -44,18 +44,13 @@ export default function VideoCard(props) {
       <CardImgOverlay
         style={{
           justifyContent: 'start'
-          // margin: '0 auto'
         }}
       >
         <Badge
           className='card-badge'
           color='warning'
           style={{
-            // position: "absolute",
-            // top: '5px',
-            // left: '5px'
           }}
-          // className='badge-pill'
         >
           Video
         </Badge>

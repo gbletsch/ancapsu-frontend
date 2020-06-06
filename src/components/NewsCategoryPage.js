@@ -34,7 +34,7 @@ export default function VideoCategoryPage(props) {
   useEffect(() => {
     api.get(url)
       .then(response => {
-        console.log('response', response);
+        // console.log('response', response);
         
         settotalArticles(response.data.Total)
         setdataset(response.data.Articles);
