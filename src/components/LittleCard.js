@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import {
   Badge,
@@ -11,8 +11,8 @@ import {
   CardSubtitle,
   CardTitle,
   CardText,
-  CardFooter
-} from 'reactstrap'
+  CardFooter,
+} from "reactstrap";
 
 export default function LittleCard(props) {
   const {
@@ -27,75 +27,67 @@ export default function LittleCard(props) {
     reference,
     startingText,
     title,
-  } = props
+  } = props;
 
   return (
     <Card>
-      <CardImg
-        src={photo}
-        alt='image'
-      />
+      <CardImg src={photo} alt="image" />
       <Badge
-        className='card-badge'
-        color='warning'
+        className="card-badge"
+        color="warning"
         style={{
-          position: 'absolut',
-          top: '4px',
-          left: '4px'
+          position: "absolut",
+          top: "4px",
+          left: "4px",
         }}
       >
         {mainCategory.Category}
       </Badge>
       <CardHeader>
-        {
-          categories.map(item => {
-            return (
-              <Link
-                to={{
-                  pathname: `${baseUrl}/${item.Label}`,
-                  state: {
-                    nameCat: item.Category
-                  }
-                }}
-              >
-                <Badge className='badge-dark'>
-                  {item.Category}
-                </Badge>
-              </Link>
-            )
-          })
-        }
-
-      </CardHeader> 
+        {categories.map((item) => {
+          return (
+            <Link
+              to={{
+                pathname: `${baseUrl}/${item.Label}`,
+                state: {
+                  nameCat: item.Category,
+                },
+              }}
+            >
+              <Badge className="badge-dark">{item.Category}</Badge>
+            </Link>
+          );
+        })}
+      </CardHeader>
       <CardBody>
-        <CardTitle tag='h6'>
+        <CardTitle tag="h6">
           <Link
-            className='styled-a'
+            className="styled-a"
             to={{
-              pathname: `${baseUrl}/${id}`
+              pathname: `${baseUrl}/${id}`,
+              state: {
+                photo: photo,
+              },
             }}
           >
             {title}
           </Link>
         </CardTitle>
-        <CardSubtitle>
-          {reference}
-        </CardSubtitle>
-        {/* <CardHeader> */}
-          <Link
-            className='styled-a'
-            to={{
-              pathname: link,
-              state: {
-                id: key
-              }
-            }}
-          />
-        <CardText className='mt-3'><small>{startingText}</small></CardText>
+        <CardSubtitle>{reference}</CardSubtitle>
+        <Link
+          className="styled-a"
+          to={{
+            pathname: link,
+            state: {
+              id: key,
+            },
+          }}
+        />
+        <CardText className="mt-3">
+          <small>{startingText}</small>
+        </CardText>
       </CardBody>
-      <CardFooter>
-        Extras - vou escrever - goste - fake...
-      </CardFooter>
+      <CardFooter>Extras - vou escrever - goste - fake...</CardFooter>
     </Card>
-  )
+  );
 }

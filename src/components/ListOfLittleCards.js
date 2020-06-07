@@ -17,6 +17,8 @@ export default function ListOfLittleCards(props) {
   const [ini, setini] = useState(0)
   const max = 10
   const baseUrl = props.match.url
+  console.log("base", baseUrl);
+
   const [url, seturl] = useState(`${baseUrl}?token=&ini=${ini}&max=${max}`)
   // console.log('url', url)
 
@@ -70,7 +72,7 @@ export default function ListOfLittleCards(props) {
             default:
               break;
           }
-
+ 
 
           return (
             <LittleCard

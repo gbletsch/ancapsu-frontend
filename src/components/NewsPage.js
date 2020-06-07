@@ -20,7 +20,7 @@ import {
   ListGroupItem
 } from 'reactstrap'
 
-export default function VideoPage(props) {
+export default function NewsPage (props) {
   const [loading, setloading] = useState(true)
   const id = props.match.params.id
   
