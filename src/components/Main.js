@@ -21,8 +21,8 @@ export default function Main() {
   const [articles, setarticles] = useState([])
   const [stats, setstats] = useState([])
 
-  useEffect(() => {
-    api.get('news/homepage')
+  useEffect(() => {   
+    api.get('homepage')
       .then(response => {
         setNumTargets(response.data.NumTargets)
         setNumApproval(response.data.NumApproval)
