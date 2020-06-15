@@ -1,24 +1,15 @@
 import React from 'react';
 
-import { BrowserRouter as Router } from 'react-router-dom'
-import { Container } from 'reactstrap'
-import Top from './components/Top'
-import MyFooter from './components/MyFooter'
+import TopBar from './pages/TopBar'
 
-import Routes from './Routes'
-
-import './Global.css'
+import './global.css'
 
 function App() {
   return (
-    <Router>
-      <Container fluid>
-        <Top />
-        <Routes />
-        <MyFooter />
-      </Container>
-    </Router>
-  );
+    <div>
+      <TopBar />
+    </div>
+);
 }
 
 export default App;
